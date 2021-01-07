@@ -1,8 +1,8 @@
 <?php
 
-namespace Froiden\SqlGenerator;
+namespace Royalcms\Component\LaravelSqlGenerator;
 
-use Froiden\SqlGenerator\Console\SqlCommand;
+use Royalcms\Component\LaravelSqlGenerator\Console\SqlCommand;
 use Illuminate\Support\ServiceProvider;
 
 class SqlGeneratorServiceProvider extends ServiceProvider
@@ -15,9 +15,29 @@ class SqlGeneratorServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        $this->publish();
+
         $this->publishes([
             __DIR__.'/sql_generator.php' => config_path("sql_generator.php"),
         ]);
+    }
+
+    /**
+     * Publish config file.
+     */
+    protected function publish()
+    {
+        $source = realpath($raw = __DIR__.'/config/sql_generator.php') ?: $raw;
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                $source => config_path('sql_generator.php'),
+            ]);
+        }
+
+        if (! $this->app->configurationIsCached()) {
+            $this->mergeConfigFrom($source, 'sql_generator');
+        }
     }
 
     /**
@@ -48,13 +68,12 @@ class SqlGeneratorServiceProvider extends ServiceProvider
     protected function registerInstallCommand()
     {
         $this->app->singleton('command.generate.sql', function($app) {
-
-            return new SqlCommand();
+            return new SqlCommand($app['migrator']);
         });
     }
 
     /**
-     * @return void
+     * @return array
      */
     public function provides()
     {
