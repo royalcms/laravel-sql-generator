@@ -1,20 +1,24 @@
 {
-    "name": "froiden/sql-generator",
+    "name": "royalcms/laravel-sql-generator",
     "description": "convert Laravel migrations to raw SQL scripts",
     "authors": [
         {
             "name": "Jayant Soni",
             "email": "jayant@froiden.com"
+        },
+        {
+            "name": "Royal Wang",
+            "email": "hxroyal@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Froiden\\SqlGenerator\\": "src",
-            "Froiden\\SqlGenerator\\Tests\\": "tests"
+            "Royalcms\\Component\\LaravelSqlGenerator\\": "src",
+            "Royalcms\\Component\\LaravelSqlGenerator\\Tests\\": "tests"
         }
     },
     "require": {
-        "laravel/framework": ">= 5.3"
+        "laravel/framework": ">= 6.0"
     },
     "license": "MIT"
 }
