@@ -12,7 +12,7 @@ use Symfony\Component\Console\Input\InputArgument;
 
 class SqlCommand extends Command
 {
-    protected $name        = 'sql:generate 
+    protected $signature        = 'sql:generate 
                 {--path=* : The path(s) to the migrations files to be executed}';
 
     protected $description = 'convert Laravel migrations to raw SQL scripts';
