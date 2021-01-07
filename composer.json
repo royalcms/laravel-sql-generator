@@ -13,8 +13,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Royalcms\\Component\\LaravelSqlGenerator\\": "src",
-            "Royalcms\\Component\\LaravelSqlGenerator\\Tests\\": "tests"
+            "Royalcms\\Laravel\\SqlGenerator\\": "src",
+            "Royalcms\\Laravel\\SqlGenerator\\Tests\\": "tests"
         }
     },
     "require": {
