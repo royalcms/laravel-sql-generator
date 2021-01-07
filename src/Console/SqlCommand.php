@@ -13,7 +13,8 @@ use Symfony\Component\Console\Input\InputArgument;
 class SqlCommand extends Command
 {
     protected $signature        = 'sql:generate 
-                {--path=* : The path(s) to the migrations files to be executed}';
+                {--path=* : The path(s) to the migrations files to be executed}
+                {--output=* : The path to the raw SQL scripts output path}';
 
     protected $description = 'convert Laravel migrations to raw SQL scripts';
 
@@ -35,6 +36,7 @@ class SqlCommand extends Command
     public function handle()
     {
         $path = $this->option('path') ?: base_path() . '/database/migrations';
+        $output = $this->option('output') ?: Config::get('sql_generator.defaultDirectory');
 
         // Now that we have the connections we can resolve it and pretend to run the
         // queries against the database returning the array of raw SQL statements
@@ -71,14 +73,17 @@ class SqlCommand extends Command
                 $sql            .= $query['query'] . ";\n";
             }
         }
-        $dir = Config::get('sql_generator.defaultDirectory');
+
+        $dir = $output;
         //Check directory exit or not
         if (is_dir($dir) === false) {
             // Make directory in database folder
             mkdir($dir);
         }
+
         // Pull query in sql file
         File::put($dir . '/database.sql', $sql);
+
         $this->comment("Sql script create successfully");
     }
 }
