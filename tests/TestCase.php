@@ -1,5 +1,6 @@
 <?php
-namespace Froiden\SqlGenerator\Tests;
+namespace Royalcms\Component\LaravelSqlGenerator\Tests;
+
 /**
  * Class TestCase
  * @package Froiden\RestAPI\Tests
@@ -19,7 +20,7 @@ class  TestCase extends \Illuminate\Foundation\Testing\TestCase
      *
      * @return void
      */
-    public function setUp()
+    protected function setUp()
     {
         parent::setUp();
         config(['sql_generator.defaultDirectory' =>__DIR__.'/sql']);

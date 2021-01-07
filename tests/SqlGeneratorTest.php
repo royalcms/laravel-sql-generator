@@ -1,8 +1,12 @@
 <?php
+namespace Royalcms\Component\LaravelSqlGenerator\Tests;
+
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Froiden\SqlGenerator\Tests\TestCase;
+use Royalcms\Component\LaravelSqlGenerator\SqlFormatter;
+use Royalcms\Component\LaravelSqlGenerator\Tests\TestCase;
+
 class SqlGeneratorTest extends TestCase
 {
     use DatabaseTransactions;
@@ -22,7 +26,7 @@ class SqlGeneratorTest extends TestCase
     public function testSqlExitOrNot()
     {
         $content = file_get_contents($this->directory.'/database.sql');
-        $queries = \Froiden\SqlGenerator\SqlFormatter::splitQuery($content);
+        $queries = SqlFormatter::splitQuery($content);
         foreach ($queries as $query) {
 
         }
