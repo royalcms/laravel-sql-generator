@@ -1,5 +1,5 @@
-[![Packagist License](https://poser.pugx.org/froiden/sql-generator/license.png)]()
-[![Total Downloads](https://poser.pugx.org/froiden/sql-generator/d/total.png)](https://packagist.org/packages/froiden/sql-generator)
+[![Packagist License](https://poser.pugx.org/royalcms/laravel-sql-generator/license.png)]()
+[![Total Downloads](https://poser.pugx.org/royalcms/laravel-sql-generator/d/total.png)](https://packagist.org/packages/royalcms/laravel-sql-generator)
 
 
 # LARAVEL SQL GENERATOR
@@ -11,14 +11,14 @@ Convert Laravel migrations to raw SQL scripts
 ### Step 1: Install Through Composer
 
 ```
-composer require "froiden/sql-generator:dev-master"
+composer require "royalcms/laravel-sql-generator:^2.0"
 ```
 
 ### Step 2: Add the Service Provider
 Now add the following to the providers array in your config/app.php
 
 ```php
-\Froiden\SqlGenerator\SqlGeneratorServiceProvider::class,
+\Royalcms\Laravel\SqlGenerator\SqlGeneratorServiceProvider::class,
 ```
 ### Step 3: Now publish the vendor
 ```bash
