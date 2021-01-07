@@ -22,6 +22,7 @@ class TestSqlGeneratorTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
         //
         Schema::create('test_test_sql_blogs', function (Blueprint $table) {
             $table->increments('test_id');
@@ -31,6 +32,7 @@ class TestSqlGeneratorTable extends Migration
             $table->text('test_blogMsg');
             $table->timestamps();
         });
+
         Schema::table('test_test_sql_blogs', function($table) {
             $table->foreign('test_userId')->references('test_id')->on('test_sql_generator_')->onDelete('cascade');
         });
