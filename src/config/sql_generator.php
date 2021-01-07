@@ -7,4 +7,4 @@ return [
      */
     'defaultDirectory' => database_path('sql'),
 
-    ];
+];
