@@ -16,10 +16,6 @@ class SqlGeneratorServiceProvider extends ServiceProvider
     {
         //
         $this->publish();
-
-        $this->publishes([
-            __DIR__.'/sql_generator.php' => config_path("sql_generator.php"),
-        ]);
     }
 
     /**
@@ -27,7 +23,7 @@ class SqlGeneratorServiceProvider extends ServiceProvider
      */
     protected function publish()
     {
-        $source = realpath($raw = __DIR__.'/config/sql_generator.php') ?: $raw;
+        $source = realpath($raw = __DIR__.'/../config/sql_generator.php') ?: $raw;
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
