@@ -14,7 +14,7 @@ class SqlCommand extends Command
 {
     protected $signature        = 'sql:generate 
                 {--path=* : The path(s) to the migrations files to be executed}
-                {--output=* : The path to the raw SQL scripts output path}';
+                {--output= : The path to the raw SQL scripts output path}';
 
     protected $description = 'convert Laravel migrations to raw SQL scripts';
 
