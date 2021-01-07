@@ -1,9 +1,9 @@
 <?php
 
-namespace Royalcms\Component\LaravelSqlGenerator\Console;
+namespace Royalcms\Laravel\SqlGenerator\Console;
 
 use Illuminate\Database\Migrations\Migrator;
-use Royalcms\Component\LaravelSqlGenerator\SqlFormatter;
+use Royalcms\Laravel\SqlGenerator\SqlFormatter;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;

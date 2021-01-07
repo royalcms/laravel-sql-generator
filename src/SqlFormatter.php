@@ -1,6 +1,6 @@
 <?php
 
-namespace Royalcms\Component\LaravelSqlGenerator;
+namespace Royalcms\Laravel\SqlGenerator;
 
 /**
  * SQL Formatter is a collection of utilities for debugging SQL queries.
@@ -647,7 +647,7 @@ class SqlFormatter
      *
      * @param String $string The SQL string
      *
-     * @return Array An array of individual query strings without trailing semicolons
+     * @return array An array of individual query strings without trailing semicolons
      */
     public static function splitQuery($string)
     {
@@ -739,7 +739,7 @@ class SqlFormatter
     /**
      * Highlights a token depending on its type.
      *
-     * @param Array $token An associative array containing type and value.
+     * @param array $token An associative array containing type and value.
      *
      * @return String HTML code of the highlighted token.
      */

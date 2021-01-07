@@ -1,8 +1,8 @@
 <?php
 
-namespace Royalcms\Component\LaravelSqlGenerator;
+namespace Royalcms\Laravel\SqlGenerator;
 
-use Royalcms\Component\LaravelSqlGenerator\Console\SqlCommand;
+use Royalcms\Laravel\SqlGenerator\Console\SqlCommand;
 use Illuminate\Support\ServiceProvider;
 
 class SqlGeneratorServiceProvider extends ServiceProvider
